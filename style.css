@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -103,4 +104,205 @@ main .learn-more {
 main .learn-more:hover {
     background-color: #f4cfc5;   /* slightly darker on hover */
     transform: scale(1.05);
+=======
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  margin: 0;
+  text-align: left;
+}
+
+header {
+  padding: 20px;
+  text-align: left;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;
+  line-height: 100px;
+  letter-spacing: 0%;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: Italic;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0;
+  color: #d3a79d;
+  text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+    -1px 1px 0 #000, 0px 1px 0 #000, 1px 0px 0 #000, 0px -1px 0 #000,
+    -1px 0px 0 #000, 0px 6px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px 20px 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 22px;
+  line-height: 36px;
+  text-align: right;
+}
+
+nav button span {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 7%;
+}
+
+nav button::after {
+  content: " →";
+  display: inline-block;
+  text-decoration: none;
+}
+
+nav button.active {
+  color: #c47a5a;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+nav button.active::after {
+  content: " ↓";
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main-background {
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden  ;
+}
+
+main {
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  width: 100%;
+  position: relative;
+  width: 100vw;
+  height: 80vh;
+}
+
+main.fade-out {
+  opacity: 0;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  height: auto;
+  max-height: 80vh;
+  width: 100vw;
+}
+
+.image img {
+  max-height: 80vh;
+  object-fit: cover;
+  width: 100vw;
+}
+
+.more-info-image {
+  z-index: 3;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("images/info-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.text {
+  position: relative;
+  z-index: 4;
+  width: 80%;
+  padding: 0 20px 20px 20px;
+  box-sizing: border-box;
+  margin-top: -25px;
+}
+
+.text h2 {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 55px;
+  line-height: 60px;
+  letter-spacing: 0%;
+  margin-bottom: 0;
+}
+
+.summary {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: 0%;
+  max-width: 800px;
+  text-align: left;
+  margin: 0 auto;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main .learn-more {
+  background-color: #fbe0da;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  white-space: nowrap;
+  font-family: IvyPresto Display;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 35px;
+  letter-spacing: 5%;
+  text-align: right;
+  text-transform: capitalize;
+}
+
+main .learn-more:hover {
+  background-color: #f4cfc5;
+  transform: scale(1.05);
+>>>>>>> 529a66c (final update)
 }
