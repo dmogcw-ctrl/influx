@@ -34,38 +34,51 @@ const content = {
 const buttons = document.querySelectorAll("nav button");
 const main = document.getElementById("content");
 
-// Add an active class to the first button (Dermal Fillers) on page load
-const initialButton = document.querySelector('button[data-tab="fillers"]');
-if (initialButton) {
-  initialButton.classList.add("active");
+/**
+ * A dedicated function to update the main content area.
+ * @param {string} tabName - The key for the content object (e.g., "fillers").
+ */
+function updateContent(tabName) {
+  const data = content[tabName];
+  if (!data) return; // Exit if the tab name is invalid
+
+  // Update the active button
+  buttons.forEach((btn) => {
+    btn.classList.remove("active");
+    if (btn.getAttribute("data-tab") === tabName) {
+      btn.classList.add("active");
+    }
+  });
+
+  // Fade out, update content, and fade back in
+  main.classList.add("fade-out");
+
+  setTimeout(() => {
+    main.innerHTML = `
+      <div class="image">
+        <img src="${data.image}" alt="${data.title}" />
+      </div>
+      <div class="more-info-image">
+        <div class="text">
+          <h2>${data.title}</h2>
+          <p>${data.text}</p>
+          <button class="learn-more">${data.title} →</button>
+        </div>
+      </div>
+    `;
+
+    main.classList.remove("fade-out");
+  }, 500); // Match the CSS transition time
 }
 
+// Add click event listeners to all buttons
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const tab = button.getAttribute("data-tab");
-    const data = content[tab];
-
-    buttons.forEach((btn) => btn.classList.remove("active"));
-
-    button.classList.add("active");
-
-    main.classList.add("fade-out");
-
-    setTimeout(() => {
-      main.innerHTML = `
-        <div class="image">
-          <img src="${data.image}" alt="${data.title}" />
-        </div>
-        <div class="more-info-image">
-          <div class="text">
-            <h2>${data.title}</h2>
-            <p>${data.text}</p>
-            <button class="learn-more">${data.title} →</button>
-          </div>
-        </div>
-      `;
-
-      main.classList.remove("fade-out");
-    }, 500);
+    updateContent(tab);
   });
 });
+
+// --- INITIAL PAGE LOAD ---
+// Load the default content when the script runs
+updateContent("fillers");
