@@ -34,15 +34,10 @@ const content = {
 const buttons = document.querySelectorAll("nav button");
 const main = document.getElementById("content");
 
-/**
- * A dedicated function to update the main content area.
- * @param {string} tabName - The key for the content object (e.g., "fillers").
- */
 function updateContent(tabName) {
   const data = content[tabName];
-  if (!data) return; // Exit if the tab name is invalid
+  if (!data) return;
 
-  // Update the active button
   buttons.forEach((btn) => {
     btn.classList.remove("active");
     if (btn.getAttribute("data-tab") === tabName) {
@@ -50,7 +45,6 @@ function updateContent(tabName) {
     }
   });
 
-  // Fade out, update content, and fade back in
   main.classList.add("fade-out");
 
   setTimeout(() => {
@@ -68,10 +62,9 @@ function updateContent(tabName) {
     `;
 
     main.classList.remove("fade-out");
-  }, 500); // Match the CSS transition time
+  }, 500);
 }
 
-// Add click event listeners to all buttons
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const tab = button.getAttribute("data-tab");
@@ -79,6 +72,4 @@ buttons.forEach((button) => {
   });
 });
 
-// --- INITIAL PAGE LOAD ---
-// Load the default content when the script runs
 updateContent("fillers");
